@@ -1,6 +1,8 @@
 package jira_client
 
 import (
+	"os"
+
 	"github.com/andygrunwald/go-jira"
 )
 
@@ -8,7 +10,7 @@ func Connect() string {
 	issue_key := "WTA-1896"
 	server := "jira.petrovich.tech"
 	tp := jira.BearerAuthTransport{
-		Token: "OTc5OTc4NTk4MTI2Oil3kHipKTLCyhrnqMYO5OrLY62n",
+		Token: os.Getenv("JIRA_TOKEN"),
 	}
 
 	JiraClient, _ := jira.NewClient(tp.Client(), server)
