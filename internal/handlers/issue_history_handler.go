@@ -1,5 +1,13 @@
-package issue_history_handler
+package handlers
 
-func Handle() {
+import (
+	"fmt"
 
+	jira_client "github.com/ether-brain/go-rest-api/internal/jira_client"
+)
+
+func Handle() string {
+	issue_data := jira_client.Connect()
+	fmt.Println(issue_data)
+	return issue_data
 }
