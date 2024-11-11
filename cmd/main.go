@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	handlers "github.com/ether-brain-go-rest-api/internal/handlers"
+	handlers "github.com/ether-brain-go/rest-api/internal/handlers"
 )
 
 func main() {
