@@ -3,10 +3,10 @@ package main
 import (
 	"fmt"
 
-	handlers "github.com/ether-brain-go/go-rest-api/internal/handlers"
+	handlers "github.com/ether-brain/go-rest-api/internal/handlers"
 )
 
 func main() {
-	fmt.Println("Hello World!")
-	handlers.Handle()
+	status, response, err := handlers.Handle()
+	fmt.Println(*status, *response, err)
 }

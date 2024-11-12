@@ -1,13 +1,11 @@
 package handlers
 
 import (
-	"fmt"
-
-	jira_client "github.com/ether-brain/go-rest-api/internal/jira_client"
+	"github.com/andygrunwald/go-jira"
+	jiraClient "github.com/ether-brain/go-rest-api/internal/jira_client"
 )
 
-func Handle() string {
-	issue_data := jira_client.Connect()
-	fmt.Println(issue_data)
-	return issue_data
+func Handle() (*string, *jira.Response, error) {
+	issueStatus, response, err := jiraClient.GetCurrentIssueStatus()
+	return issueStatus, response, err
 }
